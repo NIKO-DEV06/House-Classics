@@ -62,9 +62,9 @@ export const Reveal = ({
           delay,
           ease: "easeInOut",
           type: "spring",
-          mass: 15,
-          stiffness: 150,
-          damping: 50,
+          mass: 10,
+          stiffness: 300,
+          damping: 60,
         }}
       >
         {children}
