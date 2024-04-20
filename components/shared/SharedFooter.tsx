@@ -15,7 +15,7 @@ const SharedFooter = () => {
           className="mx-auto lg:mx-0"
           alt="hosue&classics"
         />
-        <div className="flex justify-center lg:justify-start gap-[1.2rem] scale-90 lg:scale-100">
+        <div className="flex flex-col md:flex-row justify-center items-center lg:justify-start gap-[1.2rem] scale-90 lg:scale-100">
           <div className="bg-gradient-to-b from-[#1A1A1A] to-[#0C0C0C] flex flex-col gap-[0.5rem] rounded-[10px] py-[1.5rem] pl-[2rem] w-[17rem] xl:w-[20rem]">
             <p className="uppercase text-[0.8rem] text-[#FFE81F] tracking-[0.2em]">
               We&apos;re Social:
