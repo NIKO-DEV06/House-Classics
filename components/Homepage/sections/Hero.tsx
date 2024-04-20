@@ -11,16 +11,16 @@ const Hero = () => {
       }}
       className="min-h-screen bg-cover pb-[4rem]"
     >
-      <div className="pl-[2rem] pr-[2rem] lg:pl-[3.5rem] lg:pr-[10rem]">
+      <div className="pl-[1.3rem] pr-[1.3rem] lg:pl-[3.5rem] lg:pr-[10rem]">
         <Header />
         {/* HERO HEADINGS */}
         <div className="grid min-h-[55vh] lg:min-h-[50vh] place-items-center">
           <div className="relative">
             <div className="text-center lg:text-left">
-              <h1 className="text-[3rem] md:text-[5.5rem] lg:text-[6rem]  xl:text-[8rem] font-extrabold tracking-tighter translate-x-[-2rem] md:translate-x-[-3.5rem] lg:translate-x-[-5rem]">
+              <h1 className="text-[2.8rem] md:text-[5.5rem] lg:text-[6rem]  xl:text-[8rem] font-extrabold tracking-tighter translate-x-[-2rem] md:translate-x-[-3.5rem] lg:translate-x-[-5rem]">
                 The Ultimate
               </h1>
-              <h1 className="text-[3rem] md:text-[5.5rem] lg:text-[6rem]  xl:text-[8rem] text-[#FFE81F] font-extrabold tracking-tighter leading-[0.2] translate-x-[0.5rem] md:translate-x-[1.5rem] lg:translate-x-[3rem]">
+              <h1 className="text-[2.8rem] md:text-[5.5rem] lg:text-[6rem]  xl:text-[8rem] text-[#FFE81F] font-extrabold tracking-tighter leading-[0.2] translate-x-[0.5rem] md:translate-x-[1.5rem] lg:translate-x-[3rem]">
                 House Events
               </h1>
               <p className="md:w-[80%] lg:w-[40%] xl:w-[35%] lg:absolute block top-[2rem] xl:top-[3.5rem] right-[-9.5rem] xl:right-[-11.8rem] text-[1.05rem] lg:text-[0.8rem] xl:text-[0.9rem] mt-[2.5rem] md:mt-[3.5rem] lg:mt-0 font-light md:mx-auto">

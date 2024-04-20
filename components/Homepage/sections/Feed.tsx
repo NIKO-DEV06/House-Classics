@@ -55,12 +55,12 @@ const Feed = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-[780px] lg:h-[850px] h[110vh] lg:h[120vh] 2xl: minh-screen overflow-hidden bg-[#EDEDED] text-black pt-[4rem] pb-[6rem]">
+    <section className="relative w-full h-[800px] md:h-[850px] overflow-hidden bg-[#EDEDED] text-black pt-[4rem] pb-[6rem]">
       <div className="px-[2rem] md:px-[6rem] lg:px-[6rem] flex flex-col justify-center items-center">
         <div className="w-fit text-white bg-black p-[1rem] rounded-full">
           <FaInstagram size={28} />
         </div>
-        <h2 className="mb-[1.5rem] leading-[0] text-[3.4rem] font-bold tracking-tighter mt-[2.3rem]">
+        <h2 className="mb-[1.5rem] leading-[0] text-[2.5rem] md:text-[3.4rem] font-bold tracking-tighter mt-[2.3rem]">
           Follow Us
         </h2>
         <p className="mt-[0.5rem] text-[1.15rem]">Come follow for updates</p>

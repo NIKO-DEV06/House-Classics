@@ -47,13 +47,13 @@ const Reels = () => {
     <section className="bg-[#111111] pb-[12rem] lg:pb-[15rem]">
       <div
         ref={ref}
-        className="relative pl-[2rem] pr-[2rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[0rem] flex flex-col lg:flex-row 2xl:max-w-[1470px] 2xl:m-auto gap-[1rem]"
+        className="relative pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[0rem] flex flex-col lg:flex-row 2xl:max-w-[1470px] 2xl:m-auto gap-[1rem]"
       >
         <div className="absolute w-[10rem] lg:w-[20rem] h-[89%] right-0 top-[1rem] z-[5] pointer-events-none">
           <div className="w-full h-full bg-gradient-to-r from-transparent to-black blur-lg"></div>
         </div>
         <div className="">
-          <h2 className="text-[3.3rem] font-bold tracking-tighter leading-[3rem]">
+          <h2 className="text-[2.5rem] md:text-[3.3rem] font-bold tracking-tighter leading-[3rem]">
             Watch our reels
           </h2>
           <div className="bg-[#FFE81F] w-[80%] h-[1px] my-[1rem]"></div>

@@ -9,7 +9,7 @@ const About = () => {
         backgroundImage: 'url("/aboutbg.png")',
         backgroundPosition: "top",
       }}
-      className="mt-[6rem] lg:mt-[10rem] pl-[2rem] pr-[2rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[10rem] pt-[3rem] pb-[8rem] lg:py-[2rem] lg:pb-[6rem] bg-no-repeat bg-cover"
+      className="mt-[6rem] lg:mt-[10rem] pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[10rem] pt-[3rem] pb-[8rem] lg:py-[2rem] lg:pb-[6rem] bg-no-repeat bg-cover"
     >
       <div className="flex flex-col-reverse lg:flex-row lg:gap-[3rem] xl:gap-[4rem] 2xl:max-w-[1470px] 2xl:m-auto">
         <div className="relative">
@@ -35,7 +35,7 @@ const About = () => {
             <h3 className="text-[#FFE81F] font-medium">
               Welcome to House and Classics
             </h3>
-            <h2 className="text-[3rem] lg:text-[2.3rem] xl:text-[3rem] 2xl:text-[3.5rem]  font-bold leading-none mt-[1rem] mb-[1.5rem] xl:mb-[2rem] tracking-tighter">
+            <h2 className="text-[2.5rem] md:text-[3.3rem] lg:text-[2.3rem] xl:text-[3rem] 2xl:text-[3.5rem]  font-bold leading-none mt-[1rem] mb-[1.5rem] xl:mb-[2rem] tracking-tighter">
               The Longest Standing House event for decades
             </h2>
             <p className="leading-[1.8rem] lg:leading-[1.5rem] xl:leading-[1.8rem] lg:text-[0.9rem] xl:text-base">

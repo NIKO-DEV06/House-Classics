@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const SharedFooter = () => {
   return (
-    <footer className="bg-black 2xl:max-w-[1770px] 2xl:m-auto pt-[6rem] pb-[6rem] lg:pb-[10rem] pl-[2rem] pr-[2rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[10rem] text-white flex flex-col gap-[5rem] lg:gap-[8rem]">
+    <footer className="bg-black 2xl:max-w-[1770px] 2xl:m-auto pt-[6rem] pb-[6rem] lg:pb-[10rem] pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[10rem] text-white flex flex-col gap-[5rem] lg:gap-[8rem]">
       <div className="flex flex-col lg:flex-row justify-between gap-[2rem]">
         <Image
           src={logo}

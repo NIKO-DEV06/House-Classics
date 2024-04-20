@@ -5,7 +5,7 @@ const Gallery = () => {
   return (
     <section className="bg-[#111111] pb-[12rem] lg:pb-[16rem]">
       <div className="2xl:max-w-[1470px] 2xl:m-auto">
-        <h2 className="mb-[1.5rem] text-[3.3rem] font-bold tracking-tighter pl-[2rem]  md:pl-[6rem] lg:pl-[6rem]">
+        <h2 className="mb-[1.5rem] text-[2.5rem] md:text-[3.3rem] font-bold tracking-tighter pl-[1.3rem]  md:pl-[4rem] lg:pl-[6rem]">
           Gallery
         </h2>
         <div className="gap-[1rem]">

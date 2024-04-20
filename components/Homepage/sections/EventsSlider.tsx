@@ -47,12 +47,12 @@ const EventsSlider = () => {
   return (
     <section
       ref={ref}
-      className="pl-[2rem] pr-[2rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[0rem]"
+      className="pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[0rem]"
     >
       <div className="relative overflow-hidden">
         <div className="">
           <div className="flex items-center justify-between lg:pr-[10rem]">
-            <h2 className="mb-4 text-[3.3rem] font-bold tracking-tighter">
+            <h2 className="mb-4 text-[2.5rem] md:text-[3.3rem] font-bold tracking-tighter">
               Events
             </h2>
 
