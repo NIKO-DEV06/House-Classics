@@ -7,6 +7,8 @@ import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { FEED_DATA } from "@/utils/placeholderData";
 import { FeedProps } from "@/utils/types";
 import { FaInstagram } from "react-icons/fa";
+import { Reveal } from "@/components/animations/Reveal";
+import { FadeReveal } from "@/components/animations/FadeReveal";
 
 const CARD_SIZE_LG = 365;
 const CARD_SIZE_SM = 290;
@@ -57,52 +59,62 @@ const Feed = () => {
   return (
     <section className="relative w-full h-[800px] md:h-[850px] overflow-hidden bg-[#EDEDED] text-black pt-[4rem] pb-[6rem]">
       <div className="px-[2rem] md:px-[6rem] lg:px-[6rem] flex flex-col justify-center items-center">
-        <div className="w-fit text-white bg-black p-[1rem] rounded-full">
-          <FaInstagram size={28} />
-        </div>
-        <h2 className="mb-[1.5rem] leading-[0] text-[2.5rem] md:text-[3.4rem] font-bold tracking-tighter mt-[2.3rem]">
-          Follow Us
-        </h2>
-        <p className="mt-[0.5rem] text-[1.15rem]">Come follow for updates</p>
+        <FadeReveal>
+          <div className="w-fit text-white bg-black p-[1rem] rounded-full">
+            <FaInstagram size={28} />
+          </div>
+        </FadeReveal>
+        <Reveal y={20}>
+          <h2 className="mb-[1.5rem] leading-[0] text-[2.5rem] md:text-[3.4rem] font-bold tracking-tighter mt-[2.3rem]">
+            Follow Us
+          </h2>
+        </Reveal>
+        <Reveal y={10}>
+          <p className="mt-[0.5rem] text-[1.15rem]">Come follow for updates</p>
+        </Reveal>
       </div>
 
-      <div className="relative mt-[3rem]">
-        <button
-          className="border-[1px] border-[#111111] bg-white text-black hover:bg-[#111111] hover:text-white duration-[350ms] ease-in-out p-[1rem] rounded-full absolute z-[2] top-[7rem] lg:top-[8rem] left-[1.5rem]"
-          onClick={() => handleMove(-1)}
-        >
-          <GoArrowLeft size={30} />
-        </button>
-        <button
-          className="border-[1px] border-[#111111] bg-white text-black hover:bg-[#111111] hover:text-white duration-[350ms] ease-in-out p-[1rem] rounded-full absolute z-[2] top-[7rem] lg:top-[8rem] right-[1.5rem] lg:right-[7.5rem]"
-          onClick={() => handleMove(1)}
-        >
-          <GoArrowRight size={30} />
-        </button>
-        {feeds.map((feed, idx) => {
-          let position = 0;
-          if (feeds.length % 2) {
-            position = idx - (feeds.length + 1) / 2;
-          } else {
-            position = idx - feeds.length / 2;
-          }
-          return (
-            <FeedCard
-              key={feed.feedId}
-              feed={feed}
-              index={idx}
-              handleMove={handleMove}
-              position={position}
-              cardSize={cardSize}
-            />
-          );
-        })}
-      </div>
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pb-[6rem]">
-        <button className="border-black border-[1px] py-[1rem] px-[1rem] rounded-[10px] text-[1.2rem] bg-[#EDEDED] hover:bg-[#111111] hover:text-[#EDEDED] duration-[300ms] ease-in-out">
-          @houseandclassics
-        </button>
-      </div>
+      <FadeReveal delay={0.3}>
+        <div className="relative mt-[3rem]">
+          <button
+            className="border-[1px] border-[#111111] bg-white text-black hover:bg-[#111111] hover:text-white duration-[350ms] ease-in-out p-[1rem] rounded-full absolute z-[2] top-[7rem] lg:top-[8rem] left-[1.3rem] md:left-[1.5rem]"
+            onClick={() => handleMove(-1)}
+          >
+            <GoArrowLeft size={30} />
+          </button>
+          <button
+            className="border-[1px] border-[#111111] bg-white text-black hover:bg-[#111111] hover:text-white duration-[350ms] ease-in-out p-[1rem] rounded-full absolute z-[2] top-[7rem] lg:top-[8rem] right-[1.3rem] md:right-[1.5rem] lg:right-[7.5rem]"
+            onClick={() => handleMove(1)}
+          >
+            <GoArrowRight size={30} />
+          </button>
+          {feeds.map((feed, idx) => {
+            let position = 0;
+            if (feeds.length % 2) {
+              position = idx - (feeds.length + 1) / 2;
+            } else {
+              position = idx - feeds.length / 2;
+            }
+            return (
+              <FeedCard
+                key={feed.feedId}
+                feed={feed}
+                index={idx}
+                handleMove={handleMove}
+                position={position}
+                cardSize={cardSize}
+              />
+            );
+          })}
+        </div>
+      </FadeReveal>
+      <FadeReveal>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pb-[6rem]">
+          <button className="border-black border-[1px] py-[1rem] px-[1rem] rounded-[10px] text-[1.2rem] bg-[#EDEDED] hover:bg-[#111111] hover:text-[#EDEDED] duration-[300ms] ease-in-out">
+            @houseandclassics
+          </button>
+        </div>
+      </FadeReveal>
     </section>
   );
 };

@@ -6,8 +6,9 @@ const Events = () => {
       <div className="2xl:max-w-[1470px] 2xl:m-auto">
         <div className="relative">
           <EventsSlider />
-          <div className="absolute w-[10rem] lg:w-[20rem] h-[80%] right-0 top-[9rem] pointer-events-none">
-            <div className="w-full h-full bg-gradient-to-r from-transparent to-black/90"></div>
+
+          <div className="absolute w-[10rem] lg:w-[20rem] h-[82%] right-0 top-[7.5rem] pointer-events-none blur-lg">
+            <div className="w-full h-full bg-gradient-to-r from-transparent to-black"></div>
           </div>
         </div>
         <h1 className="font-bold text-[#242212] text-[10rem] md:text-[15rem] lg:text-[23rem] tracking-[-0.07em] leading-[0.4] pl-[0.5rem]">

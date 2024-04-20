@@ -8,6 +8,8 @@ import { TbTriangleInvertedFilled } from "react-icons/tb";
 import useMeasure from "react-use-measure";
 import { ReelType } from "@/utils/types";
 import { reels } from "@/utils/placeholderData";
+import { Reveal } from "@/components/animations/Reveal";
+import { FadeReveal } from "@/components/animations/FadeReveal";
 
 const CARD_WIDTH = 340;
 const MARGIN = 0;
@@ -53,50 +55,60 @@ const Reels = () => {
           <div className="w-full h-full bg-gradient-to-r from-transparent to-black blur-lg"></div>
         </div>
         <div className="">
-          <h2 className="text-[2.5rem] md:text-[3.3rem] font-bold tracking-tighter leading-[3rem]">
-            Watch our reels
-          </h2>
-          <div className="bg-[#FFE81F] w-[80%] h-[1px] my-[1rem]"></div>
-          <p className="text-[#7F7F7F] mb-[1.5rem]">Follow us on Instagram</p>
-          <div className="flex items-center gap-[1rem]">
-            <button
-              className={`rounded-full bg-white p-[0.7rem] text-2xl transition-opacity ${
-                CAN_SHIFT_LEFT ? "" : "opacity-30"
-              }`}
-              disabled={!CAN_SHIFT_LEFT}
-              onClick={shiftLeft}
-            >
-              <GoArrowLeft className="fill-black" />
-            </button>
-            <button
-              className={`rounded-full bg-white p-[0.7rem] text-2xl transition-opacity ${
-                CAN_SHIFT_RIGHT ? "" : "opacity-30"
-              }`}
-              disabled={!CAN_SHIFT_RIGHT}
-              onClick={shiftRight}
-            >
-              <GoArrowRight className="fill-black" />
-            </button>
-          </div>
+          <Reveal y={30}>
+            <h2 className="text-[2.5rem] md:text-[3.3rem] font-bold tracking-tighter leading-[3rem]">
+              Watch our reels
+            </h2>
+          </Reveal>
+          <FadeReveal>
+            <div className="bg-[#FFE81F] w-[80%] h-[1px] my-[1rem]"></div>
+          </FadeReveal>
+          <Reveal y={10}>
+            <p className="text-[#7F7F7F] mb-[1.5rem]">Follow us on Instagram</p>
+          </Reveal>
+          <FadeReveal>
+            <div className="flex items-center gap-[1rem]">
+              <button
+                className={`rounded-full bg-white p-[0.7rem] text-2xl transition-opacity ${
+                  CAN_SHIFT_LEFT ? "" : "opacity-30"
+                }`}
+                disabled={!CAN_SHIFT_LEFT}
+                onClick={shiftLeft}
+              >
+                <GoArrowLeft className="fill-black" />
+              </button>
+              <button
+                className={`rounded-full bg-white p-[0.7rem] text-2xl transition-opacity ${
+                  CAN_SHIFT_RIGHT ? "" : "opacity-30"
+                }`}
+                disabled={!CAN_SHIFT_RIGHT}
+                onClick={shiftRight}
+              >
+                <GoArrowRight className="fill-black" />
+              </button>
+            </div>
+          </FadeReveal>
         </div>
         <div className="relative overflow-hidden w-full">
-          <motion.div
-            animate={{
-              x: offset,
-            }}
-            transition={{
-              ease: "easeInOut",
-              type: "spring",
-              mass: 3,
-              stiffness: 200,
-              damping: 50,
-            }}
-            className="flex gap-[-20rem] space-x-[-3.5rem]"
-          >
-            {reels.map((reel) => {
-              return <ReelCard key={reel.id} {...reel} />;
-            })}
-          </motion.div>
+          <FadeReveal delay={0.3}>
+            <motion.div
+              animate={{
+                x: offset,
+              }}
+              transition={{
+                ease: "easeInOut",
+                type: "spring",
+                mass: 3,
+                stiffness: 200,
+                damping: 50,
+              }}
+              className="flex gap-[-20rem] space-x-[-3.5rem]"
+            >
+              {reels.map((reel) => {
+                return <ReelCard key={reel.id} {...reel} />;
+              })}
+            </motion.div>
+          </FadeReveal>
         </div>
       </div>
       <h1 className="font-bold text-[#212121] text-[10rem] md:text-[15rem] lg:text-[23rem] tracking-[-0.07em] leading-[0] pl-[0.5rem]">

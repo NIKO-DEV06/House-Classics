@@ -8,6 +8,8 @@ import useMeasure from "react-use-measure";
 import Link from "next/link";
 import { EventType } from "@/utils/types";
 import { events } from "@/utils/placeholderData";
+import { Reveal } from "@/components/animations/Reveal";
+import { FadeReveal } from "@/components/animations/FadeReveal";
 
 const CARD_WIDTH = 350;
 const MARGIN = 20;
@@ -52,53 +54,60 @@ const EventsSlider = () => {
       <div className="relative overflow-hidden">
         <div className="">
           <div className="flex items-center justify-between lg:pr-[10rem]">
-            <h2 className="mb-4 text-[2.5rem] md:text-[3.3rem] font-bold tracking-tighter">
-              Events
-            </h2>
+            <Reveal y={50}>
+              <h2 className="mb-4 text-[2.5rem] md:text-[3.3rem] font-bold tracking-tighter">
+                Events
+              </h2>
+            </Reveal>
 
-            <div className="flex items-center gap-2">
-              <button
-                className={`rounded-full bg-white p-[0.5rem] text-2xl transition-opacity ${
-                  CAN_SHIFT_LEFT ? "" : "opacity-30"
-                }`}
-                disabled={!CAN_SHIFT_LEFT}
-                onClick={shiftLeft}
-              >
-                <GoArrowLeft className="fill-black" />
-              </button>
-              <button
-                className={`rounded-full bg-white p-[0.5rem] text-2xl transition-opacity ${
-                  CAN_SHIFT_RIGHT ? "" : "opacity-30"
-                }`}
-                disabled={!CAN_SHIFT_RIGHT}
-                onClick={shiftRight}
-              >
-                <GoArrowRight className="fill-black" />
-              </button>
+            <FadeReveal>
+              <div className="flex items-center gap-2">
+                <button
+                  className={`rounded-full bg-white p-[0.5rem] text-2xl transition-opacity ${
+                    CAN_SHIFT_LEFT ? "" : "opacity-30"
+                  }`}
+                  disabled={!CAN_SHIFT_LEFT}
+                  onClick={shiftLeft}
+                >
+                  <GoArrowLeft className="fill-black" />
+                </button>
+                <button
+                  className={`rounded-full bg-white p-[0.5rem] text-2xl transition-opacity ${
+                    CAN_SHIFT_RIGHT ? "" : "opacity-30"
+                  }`}
+                  disabled={!CAN_SHIFT_RIGHT}
+                  onClick={shiftRight}
+                >
+                  <GoArrowRight className="fill-black" />
+                </button>
+              </div>
+            </FadeReveal>
+          </div>
+          <FadeReveal>
+            <div className="mb-[3rem]">
+              <div className="bg-[#FFE81F] w-[10.1rem] h-[1px]"></div>
+              <div className="bg-[#2B2B2B] w-[78%] h-[1px]"></div>
             </div>
-          </div>
-          <div className="mb-[3rem]">
-            <div className="bg-[#FFE81F] w-[10.1rem] h-[1px]"></div>
-            <div className="bg-[#2B2B2B] w-[78%] h-[1px]"></div>
-          </div>
-
-          <motion.div
-            animate={{
-              x: offset,
-            }}
-            transition={{
-              ease: "easeInOut",
-              type: "spring",
-              mass: 3,
-              stiffness: 200,
-              damping: 50,
-            }}
-            className="flex relative"
-          >
-            {events.map((event) => {
-              return <EventCard key={event.id} {...event} />;
-            })}
-          </motion.div>
+          </FadeReveal>
+          <FadeReveal delay={0.3}>
+            <motion.div
+              animate={{
+                x: offset,
+              }}
+              transition={{
+                ease: "easeInOut",
+                type: "spring",
+                mass: 3,
+                stiffness: 200,
+                damping: 50,
+              }}
+              className="flex relative"
+            >
+              {events.map((event) => {
+                return <EventCard key={event.id} {...event} />;
+              })}
+            </motion.div>
+          </FadeReveal>
         </div>
       </div>
     </section>
