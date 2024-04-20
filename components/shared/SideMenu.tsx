@@ -9,7 +9,7 @@ import { FadeReveal } from "@/components/animations/FadeReveal";
 const SideMenu = () => {
   return (
     <>
-      <div className="absolute right-[1.5rem] top-[2rem] z-20">
+      <div className="fixed lg:hidden right-[1.5rem] top-[2rem] z-[40]">
         <FadeReveal>
           <Hamburger size={22} />
         </FadeReveal>

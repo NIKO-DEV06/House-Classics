@@ -13,8 +13,8 @@ const Hero = () => {
       }}
       className="min-h-screen bg-cover pb-[4rem]"
     >
-      <div className="pl-[1.3rem] pr-[1.3rem] lg:pl-[3.5rem] lg:pr-[10rem]">
-        <Header />
+      <Header />
+      <div className="pl-[1.3rem] pr-[1.3rem] lg:pl-[3.5rem] pt-[7rem] md:pt-[8rem] lg:pr-[10rem] lg:pt-0">
         {/* HERO HEADINGS */}
         <div className="grid min-h-[55vh] lg:min-h-[50vh] place-items-center">
           <div className="relative">
@@ -55,8 +55,8 @@ const Hero = () => {
         </div>
         {/* HERO BUTTONS */}
         <div className="flex justify-center flex-wrap gap-[0.5rem] xl:mt-[2rem] translate-y-[-3rem] md:translate-y-0">
-          <Reveal y={50} delay={0.6} overflow="">
-            <div className="bg-[#383838]/35 w-full md:w-fit flex justify-between md:justify-start items-center md:items-start gap-[3rem] px-[2.5rem] py-[2.5rem] rounded-[10px]">
+          <FadeReveal delay={0.6} extraStyle="w-full md:w-fit">
+            <div className="bg-[#383838]/35 flex justify-between md:justify-start items-center md:items-start gap-[3rem] px-[2.5rem] py-[2.5rem] rounded-[10px]">
               <div>
                 <p className="text-[#FFE81F] text-[0.9rem]">
                   House an Classics Malta
@@ -72,8 +72,8 @@ const Hero = () => {
                 <GoArrowRight size={23} />
               </Link>
             </div>
-          </Reveal>
-          <Reveal y={50} delay={0.8} overflow="">
+          </FadeReveal>
+          <FadeReveal delay={0.8} extraStyle="">
             <div className="bg-[#383838]/35 w-full md:w-fit flex gap-[3rem] px-[2.5rem] py-[2.5rem] rounded-[10px] justify-between md:justify-start items-center md:items-start">
               <div>
                 <p className="text-[#FFE81F] text-[0.9rem]">
@@ -90,10 +90,10 @@ const Hero = () => {
                 <GoArrowRight size={23} />
               </Link>
             </div>
-          </Reveal>
+          </FadeReveal>
 
-          <FadeReveal delay={1}>
-            <FadeReveal extraStyle="yellow-btn-hover bg-[#FFE81F]/35 px-[2.5rem] py-[2.78rem] rounded-[10px] ">
+          <FadeReveal delay={0.3}>
+            <FadeReveal extraStyle="yellow-btn-hover bg-[#FFE81F]/35 px-[2.5rem] py-[2.78rem] rounded-[10px]">
               <Link
                 href={""}
                 className="bg-[#FFE81F]/35 hover:text-black duration-300 ease-in-out uppercase w-fit"

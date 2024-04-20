@@ -1,11 +1,33 @@
+"use client";
+
 import Link from "next/link";
 import logo from "@/assets/logo.svg";
 import Image from "next/image";
 import { FadeReveal } from "../animations/FadeReveal";
+import { useState } from "react";
 
 const Header = () => {
+  const [fixedBg, setFixedBg] = useState(false);
+
+  const changeBg = () => {
+    if (window.scrollY >= 10) {
+      setFixedBg(true);
+    } else {
+      setFixedBg(false);
+    }
+  };
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", changeBg);
+  }
   return (
-    <header className="flex pt-[2rem] lg:pt-[2.5rem]">
+    <header
+      className={`flex lg:pb-0 lg:pt-[2.5rem] pl-[1.3rem] pr-[1.3rem] lg:pl-[3.5rem] lg:pr-[10rem] ${
+        fixedBg
+          ? "bg-[#0a0a0a]/[0.99] duration-500 pt-[1rem] pb-[1rem]"
+          : "pt-[1.5rem] pb-[1rem]"
+      }  lg:bg-transparent fixed lg:relative w-full z-[30]`}
+    >
       <FadeReveal>
         <Link
           href={""}
