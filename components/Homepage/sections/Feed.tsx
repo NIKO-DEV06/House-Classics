@@ -144,7 +144,7 @@ const FeedCard = ({ position, feed, handleMove, cardSize }: FeedProps) => {
         src={feed.img}
         width={600}
         height={600}
-        className="rounded-[12px] lg:w-[450px] h-fit my-auto"
+        className="rounded-[12px] lg:w-[450px] h-fit my-auto pointer-eventsauto"
         alt="feed"
       />
     </motion.div>

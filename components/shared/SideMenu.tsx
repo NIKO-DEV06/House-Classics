@@ -10,12 +10,16 @@ const SideMenu = () => {
     <>
       <div className="fixed lg:hidden right-[1.5rem] top-[2rem] z-50">
         <FadeReveal>
-          <Hamburger size={22} />
+          <button>
+            <Hamburger size={22} />
+          </button>
         </FadeReveal>
       </div>
       <aside className="fixed z-50 bg-black right-0 h-full w-[6rem] lg:flex flex-col justify-between items-center pt-[1.5rem] pb-[4rem] hidden">
         <FadeReveal>
-          <Hamburger size={22} />
+          <button>
+            <Hamburger size={22} />
+          </button>
         </FadeReveal>
         <div className="">
           <div className="flex flex-col items-center gap-[0.8rem]">
