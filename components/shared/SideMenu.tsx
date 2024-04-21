@@ -3,18 +3,17 @@
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import Hamburger from "hamburger-react";
-import { Reveal } from "@/components/animations/Reveal";
 import { FadeReveal } from "@/components/animations/FadeReveal";
 
 const SideMenu = () => {
   return (
     <>
-      <div className="fixed lg:hidden right-[1.5rem] top-[2rem] z-[40]">
+      <div className="fixed lg:hidden right-[1.5rem] top-[2rem] z-50">
         <FadeReveal>
           <Hamburger size={22} />
         </FadeReveal>
       </div>
-      <aside className="fixed z-20 bg-black right-0 h-full w-[6rem] lg:flex flex-col justify-between items-center pt-[1.5rem] pb-[4rem] hidden ">
+      <aside className="fixed z-50 bg-black right-0 h-full w-[6rem] lg:flex flex-col justify-between items-center pt-[1.5rem] pb-[4rem] hidden">
         <FadeReveal>
           <Hamburger size={22} />
         </FadeReveal>

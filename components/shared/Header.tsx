@@ -22,11 +22,11 @@ const Header = () => {
   }
   return (
     <header
-      className={`flex lg:pb-0 lg:pt-[2.5rem] pl-[1.3rem] pr-[1.3rem] lg:pl-[3.5rem] lg:pr-[10rem] ${
+      className={`flex lg:pb-0 lg:pt-[2.5rem] pl-[1.3rem] pr-[1.3rem] lg:pl-[3.5rem] lg:pr-[10rem]  ${
         fixedBg
           ? "bg-[#0a0a0a]/[0.99] duration-500 pt-[1rem] pb-[1rem]"
           : "pt-[1.5rem] pb-[1rem]"
-      }  lg:bg-transparent fixed lg:relative w-full z-[30]`}
+      } fixed lg:relative w-full z-[40]`}
     >
       <FadeReveal>
         <Link
