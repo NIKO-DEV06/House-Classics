@@ -53,7 +53,7 @@ const EventsSlider = () => {
     >
       <div className="relative overflow-hidden">
         <div className="">
-          <div className="flex items-center justify-between lg:pr-[10rem]">
+          <div className="flex items-center justify-between lg:pr-[6rem] 2xl:pr-0">
             <Reveal y={50}>
               <h2 className="mb-4 text-[2.5rem] md:text-[3.3rem] font-bold tracking-tighter">
                 Events
