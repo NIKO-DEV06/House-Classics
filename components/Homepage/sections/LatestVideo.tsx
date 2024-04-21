@@ -1,14 +1,25 @@
+"use client";
+
 import Image from "next/image";
+import { useRef } from "react";
 import latest from "@/assets/latest.png";
 import play from "@/assets/play.svg";
 import Link from "next/link";
 import { Reveal } from "@/components/animations/Reveal";
 import { FadeReveal } from "@/components/animations/FadeReveal";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const LatestVideo = () => {
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const moveOnXAxis = useTransform(scrollYProgress, [0, 1], [0, -50]);
   return (
     <section className="bg-[#111111] pb-[11rem]">
-      <div className="flex flex-col-reverse lg:flex-row pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[10rem] lg:gap-[2rem] xl:gap-[2rem] items-center 2xl:max-w-[2000px] 2xl:m-auto">
+      <div className="flex flex-col-reverse lg:flex-row pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[10rem] 2xl:pr-[7rem] lg:gap-[2rem] xl:gap-[2rem] items-center 2xl:max-w-[1600px] 2xl:m-auto z-[2]">
         <FadeReveal delay={0.3}>
           <div className="z-[1] relative">
             <Image
@@ -28,7 +39,7 @@ const LatestVideo = () => {
           </div>
         </FadeReveal>
         <div className="relative flex flex-col items-end">
-          <div className="text-left mb-[4rem]">
+          <div className="text-left mb-[4rem] z-[2]">
             <Reveal y={20}>
               <h3 className="text-[#FFE81F] font-medium">OUR LATEST VIDEO</h3>
             </Reveal>
@@ -46,7 +57,7 @@ const LatestVideo = () => {
             <FadeReveal delay={0.3}>
               <Link
                 href={""}
-                className="font-medium border-white border-[1px] rounded-[10px] py-[1rem] px-[1.2rem] text-[1rem] hover:text-black hover:bg-white duration-300 ease-in-out"
+                className="font-medium border-white border-[1px] rounded-[10px] py-[1rem] px-[1.2rem] text-[1rem] bg-[#111111] hover:text-black hover:bg-white duration-300 ease-in-out"
               >
                 Book Tickets
               </Link>
@@ -54,9 +65,13 @@ const LatestVideo = () => {
           </div>
         </div>
       </div>
-      <h1 className="font-bold text-[#242212] text-[8rem] md:text-[12rem] lg:text-[15rem] xl:text-[23rem] tracking-[-0.07em] leading-[0.4] pl-[0.5rem] text-nowrap z-0">
+      <motion.h1
+        ref={targetRef}
+        style={{ x: moveOnXAxis }}
+        className="font-bold text-[#242212] text-[8rem] md:text-[12rem] lg:text-[15rem] xl:text-[23rem] text-right tracking-[-0.07em] leading-[0.4] pl-[0.5rem] text-nowrap z-0"
+      >
         Dont&apos; Miss
-      </h1>
+      </motion.h1>
     </section>
   );
 };

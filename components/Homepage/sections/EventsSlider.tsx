@@ -49,7 +49,7 @@ const EventsSlider = () => {
   return (
     <section
       ref={ref}
-      className="pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[0rem]"
+      className="pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem]"
     >
       <div className="relative overflow-hidden">
         <div className="">

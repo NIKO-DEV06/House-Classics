@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { TbTriangleInvertedFilled } from "react-icons/tb";
 import useMeasure from "react-use-measure";
@@ -23,6 +23,7 @@ const BREAKPOINTS = {
 const Reels = () => {
   const [ref, { width }] = useMeasure();
   const [offset, setOffset] = useState(0);
+  const targetRef = useRef(null);
 
   const CARD_BUFFER =
     width > BREAKPOINTS.lg ? 1 : width > BREAKPOINTS.sm ? 1 : 1;
@@ -45,14 +46,21 @@ const Reels = () => {
     }
     setOffset((pv) => (pv -= CARD_SIZE));
   };
+
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const moveOnXAxis = useTransform(scrollYProgress, [0, 1], [0, 100]);
   return (
     <section className="bg-[#111111] pb-[12rem] lg:pb-[15rem]">
       <div
         ref={ref}
-        className="relative pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[0rem] flex flex-col lg:flex-row 2xl:max-w-[1470px] 2xl:m-auto gap-[1rem]"
+        className="relative pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] flex flex-col lg:flex-row 2xl:max-w-[1600px] 2xl:m-auto gap-[1rem] z-[2]"
       >
-        <div className="absolute w-[10rem] lg:w-[20rem] h-[89%] right-0 top-[1rem] z-[5] pointer-events-none">
-          <div className="w-full h-full bg-gradient-to-r from-transparent to-black blur-lg"></div>
+        <div className="absolute w-[10rem] lg:w-[22rem] h-[89%] right-0 top-[1rem] z-[5] pointer-events-none">
+          <div className="w-full h-full bg-gradient-to-r from-transparent to-[#111111] blur-lg"></div>
         </div>
         <div className="">
           <Reveal y={30}>
@@ -111,9 +119,13 @@ const Reels = () => {
           </FadeReveal>
         </div>
       </div>
-      <h1 className="font-bold text-[#212121] text-[10rem] md:text-[15rem] lg:text-[23rem] tracking-[-0.07em] leading-[0] pl-[0.5rem]">
+      <motion.h1
+        ref={targetRef}
+        style={{ x: moveOnXAxis }}
+        className="font-bold text-[#212121] text-[10rem] md:text-[15rem] lg:text-[23rem] tracking-[-0.07em] leading-[0] pl-[0.5rem]"
+      >
         Watch
-      </h1>
+      </motion.h1>
     </section>
   );
 };

@@ -8,7 +8,7 @@ import Reels from "./sections/Reels";
 
 const HomePage = () => {
   return (
-    <>
+    <section className="overflow-clip">
       <Hero />
       <About />
       <Events />
@@ -16,7 +16,7 @@ const HomePage = () => {
       <Reels />
       <LatestVideo />
       <Feed />
-    </>
+    </section>
   );
 };
 

@@ -11,9 +11,9 @@ const About = () => {
         backgroundImage: 'url("/aboutbg.png")',
         backgroundPosition: "top",
       }}
-      className="mt-[6rem] lg:mt-[10rem] pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[10rem] pt-[3rem] pb-[8rem] lg:py-[2rem] lg:pb-[6rem] bg-no-repeat bg-cover"
+      className="mt-[6rem] lg:mt-[10rem] pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[10rem] 2xl:pr-[9rem] pt-[3rem] pb-[8rem] lg:py-[2rem] lg:pb-[6rem] bg-no-repeat bg-cover"
     >
-      <div className="flex flex-col-reverse lg:flex-row lg:gap-[3rem] xl:gap-[4rem] 2xl:max-w-[1470px] 2xl:m-auto">
+      <div className="flex flex-col-reverse lg:flex-row lg:gap-[3rem] xl:gap-[4rem] 2xl:max-w-[1450px] 2xl:m-auto">
         <div className="relative">
           <FadeReveal delay={0.3}>
             <Image
