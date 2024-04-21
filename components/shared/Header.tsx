@@ -26,7 +26,7 @@ const Header = () => {
         fixedBg
           ? "bg-[#0a0a0a]/[0.99] duration-500 pt-[1rem] pb-[1rem]"
           : "pt-[1.5rem] pb-[1rem]"
-      } fixed lg:relative w-full z-[40]`}
+      } fixed lg:bg-transparent lg:relative w-full z-[40]`}
     >
       <FadeReveal>
         <Link
