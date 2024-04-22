@@ -26,7 +26,7 @@ const Events = () => {
         <motion.h1
           ref={targetRef}
           style={{ x: moveOnXAxis }}
-          className="font-bold text-[#242212] text-[10rem] md:text-[15rem] lg:text-[23rem] tracking-[-0.07em] leading-[0.4] pl-[0.5rem]"
+          className="font-bold text-[#242212] text-[10rem] md:text-[15rem] lg:text-[23rem] tracking-[-0.07em] leading-[0.4] pl-[0.5rem] pointer-events-none"
         >
           Events
         </motion.h1>
