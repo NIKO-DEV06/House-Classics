@@ -19,7 +19,7 @@ const Events = () => {
         <div className="relative z-[2] 2xl:max-w-[1600px] 2xl:m-auto">
           <EventsSlider />
 
-          <div className="absolute w-[10rem] lg:w-[22rem] h-[82%] right-0 top-[7.5rem] pointer-events-none blur-lg">
+          <div className="absolute w-[10rem] lg:w-[22rem] h-[82%] right-0 scale-y-[1.1] top-[8rem] pointer-events-none blur-lg">
             <div className="w-full h-full bg-gradient-to-r from-transparent to-[#111111]"></div>
           </div>
         </div>

@@ -52,7 +52,7 @@ const Gallery = () => {
       <motion.h1
         ref={targetRef}
         style={{ x: moveOnXAxis }}
-        className="font-bold text-[#212121] text-[10rem] md:text-[15rem] lg:text-[23rem] tracking-[-0.07em] leading-[0] text-right pr-[6rem]"
+        className="font-bold text-[#212121] text-[10rem] md:text-[15rem] lg:text-[23rem] tracking-[-0.07em] leading-[0] text-right pr-[6rem] pointer-events-none"
       >
         Gallery
       </motion.h1>

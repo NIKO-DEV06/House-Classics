@@ -68,7 +68,7 @@ const LatestVideo = () => {
       <motion.h1
         ref={targetRef}
         style={{ x: moveOnXAxis }}
-        className="font-bold text-[#242212] text-[8rem] md:text-[12rem] lg:text-[15rem] xl:text-[23rem] text-right tracking-[-0.07em] leading-[0.4] pl-[0.5rem] whitespace-nowrap z-0"
+        className="font-bold text-[#242212] text-[8rem] md:text-[12rem] lg:text-[15rem] xl:text-[23rem] text-right tracking-[-0.07em] leading-[0.4] pl-[0.5rem] whitespace-nowrap z-0 pointer-events-none"
       >
         Dont&apos; Miss
       </motion.h1>

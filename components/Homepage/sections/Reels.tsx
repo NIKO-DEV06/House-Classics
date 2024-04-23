@@ -59,7 +59,7 @@ const Reels = () => {
         ref={ref}
         className="relative pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] flex flex-col lg:flex-row 2xl:max-w-[1600px] 2xl:m-auto gap-[1rem] z-[2]"
       >
-        <div className="absolute w-[10rem] lg:w-[22rem] h-[89%] right-0 top-[1rem] z-[5] pointer-events-none">
+        <div className="absolute w-[10rem] lg:w-[22rem] h-[89%] right-0 top-[1rem] scale-y-105 z-[5] pointer-events-none">
           <div className="w-full h-full bg-gradient-to-r from-transparent to-[#111111] blur-lg"></div>
         </div>
         <div className="">
@@ -122,7 +122,7 @@ const Reels = () => {
       <motion.h1
         ref={targetRef}
         style={{ x: moveOnXAxis }}
-        className="font-bold text-[#212121] text-[10rem] md:text-[15rem] lg:text-[23rem] tracking-[-0.07em] leading-[0] pl-[0.5rem]"
+        className="font-bold text-[#212121] text-[10rem] md:text-[15rem] lg:text-[23rem] tracking-[-0.07em] leading-[0] pl-[0.5rem] pointer-events-none"
       >
         Watch
       </motion.h1>

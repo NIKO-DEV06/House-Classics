@@ -10,3 +10,13 @@
 .yellow-btn-hover {
   @apply overflow-hidden transition-all duration-500 relative before:absolute before:inset-0 before:-z-10 before:translate-x-[150%] before:translate-y-[150%] before:scale-[2.5] before:rounded-[100%] before:bg-[#FFE81F] before:transition-transform before:duration-1000 before:content-[""] hover:before:translate-x-[0%] hover:before:translate-y-[0%] hover:scale-100 active:scale-95;
 }
+
+.stroke {
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+}
+
+.stroke-yellow {
+  -webkit-text-stroke: 4px #242212;
+  color: transparent;
+}
