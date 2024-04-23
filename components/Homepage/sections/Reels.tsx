@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { TbTriangleInvertedFilled } from "react-icons/tb";
@@ -23,6 +23,7 @@ const BREAKPOINTS = {
 const Reels = () => {
   const [ref, { width }] = useMeasure();
   const [offset, setOffset] = useState(0);
+  const dragX = useMotionValue(0);
   const targetRef = useRef(null);
 
   const CARD_BUFFER =
@@ -51,6 +52,15 @@ const Reels = () => {
     target: targetRef,
     offset: ["start end", "end start"],
   });
+
+  const onDragEnd = () => {
+    const x = dragX.get();
+    if (x < 0) {
+      shiftRight();
+    } else {
+      shiftLeft();
+    }
+  };
 
   const moveOnXAxis = useTransform(scrollYProgress, [0, 1], [0, 100]);
   return (
@@ -97,26 +107,38 @@ const Reels = () => {
             </div>
           </FadeReveal>
         </div>
-        <div className="relative overflow-hidden w-full">
-          <FadeReveal delay={0.3}>
-            <motion.div
-              animate={{
-                x: offset,
-              }}
-              transition={{
-                ease: "easeInOut",
-                type: "spring",
-                mass: 3,
-                stiffness: 200,
-                damping: 50,
-              }}
-              className="flex gap-[-20rem] space-x-[-3.5rem]"
-            >
-              {reels.map((reel) => {
-                return <ReelCard key={reel.id} {...reel} />;
-              })}
-            </motion.div>
-          </FadeReveal>
+        <div className="relative overflow-hidden w-full cursor-grab">
+          <motion.div
+            drag="x"
+            dragConstraints={{
+              left: 0,
+              right: 0,
+            }}
+            style={{
+              x: dragX,
+            }}
+            onDragEnd={onDragEnd}
+          >
+            <FadeReveal delay={0.3}>
+              <motion.div
+                animate={{
+                  x: offset,
+                }}
+                transition={{
+                  ease: "easeInOut",
+                  type: "spring",
+                  mass: 3,
+                  stiffness: 200,
+                  damping: 50,
+                }}
+                className="flex gap-[-20rem] space-x-[-3.5rem]"
+              >
+                {reels.map((reel) => {
+                  return <ReelCard key={reel.id} {...reel} />;
+                })}
+              </motion.div>
+            </FadeReveal>
+          </motion.div>
         </div>
       </div>
       <motion.h1
@@ -143,7 +165,7 @@ const ReelCard = ({ views, img }: ReelType) => {
         src={img}
         width={400}
         height={400}
-        className="w-full rounded-[10px] object-cover"
+        className="w-full rounded-[10px] object-cover pointer-events-none"
         alt="reel"
       />
       <div className="absolute left-[4rem] bottom-[4.5rem] bg-black/70 w-fit flex items-center font-semibold rounded-[13px] gap-[0.5rem] px-[0.95rem] py-[0.45rem]">

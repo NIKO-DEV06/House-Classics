@@ -1,5 +1,7 @@
 "use client";
 
+// THIS COMPONENT IS RESPONSIBLE FOR FADE-IN ON THE Y-AXIS ANIMATIONS FROM BOTTOM
+
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 

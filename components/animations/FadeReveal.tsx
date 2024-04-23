@@ -1,5 +1,7 @@
 "use client";
 
+// THIS COMPONENT IS RESPONSIBLE FOR OPACITY FADE-IN ANIMATIONS
+
 import React, { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 

@@ -8,7 +8,6 @@ import { useState } from "react";
 
 const Header = () => {
   const [fixedBg, setFixedBg] = useState(false);
- 
 
   const changeBg = () => {
     if (window.scrollY >= 10) {
@@ -43,7 +42,7 @@ const Header = () => {
           src={logo}
           width={230}
           height={230}
-          className="w-[10rem] lg:w-[14.5rem]"
+          className="w-[8rem] lg:w-[14.5rem]"
           alt="House&Classics-Logo"
         />
       </FadeReveal>

@@ -113,9 +113,8 @@ const SideMenu = () => {
                 };
 
                 return (
-                  <div className="relative group">
+                  <div key={i} className="relative group">
                     <div
-                      key={i}
                       className={`border-b-[1.5px] border-b-[#181818]/10 py-[1.3rem] ${
                         i === 0 && "border-t-[1.5px] border-t-[#181818]/10"
                       }`}
@@ -184,7 +183,7 @@ const SideMenu = () => {
       {/* OVERLAY MENU ANIMATION */}
 
       {/* HAMBURGER FOR MOBILE */}
-      <div className="fixed lg:hidden right-[1.5rem] top-[2rem] z-50 mix-blend-difference">
+      <div className="fixed lg:hidden right-[1.5rem] top-[1.5rem] z-50 mix-blend-difference">
         <FadeReveal>
           <button onClick={toggleMenu}>
             <Hamburger toggled={menuIsOpen} size={22} />

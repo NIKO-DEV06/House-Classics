@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { FEED_DATA } from "@/utils/placeholderData";
 import { FeedProps } from "@/utils/types";
@@ -15,8 +15,8 @@ const CARD_SIZE_SM = 290;
 
 const Feed = () => {
   const [cardSize, setCardSize] = useState(CARD_SIZE_LG);
-
   const [feeds, setFeeds] = useState(FEED_DATA);
+  const dragX = useMotionValue(0);
 
   const handleMove = (position: number) => {
     const copy = [...feeds];
@@ -34,6 +34,12 @@ const Feed = () => {
       }
     }
     setFeeds(copy);
+  };
+
+  const onDragEnd = () => {
+    const x = dragX.get();
+    if (x > 30 && x > 0) return handleMove(-1);
+    if (x < -30 && x < 0) return handleMove(1);
   };
 
   useEffect(() => {
@@ -88,24 +94,37 @@ const Feed = () => {
           >
             <GoArrowRight size={30} />
           </button>
-          {feeds.map((feed, idx) => {
-            let position = 0;
-            if (feeds.length % 2) {
-              position = idx - (feeds.length + 1) / 2;
-            } else {
-              position = idx - feeds.length / 2;
-            }
-            return (
-              <FeedCard
-                key={feed.feedId}
-                feed={feed}
-                index={idx}
-                handleMove={handleMove}
-                position={position}
-                cardSize={cardSize}
-              />
-            );
-          })}
+          <motion.div
+            drag="x"
+            dragConstraints={{
+              left: 0,
+              right: 0,
+            }}
+            style={{
+              x: dragX,
+            }}
+            onDragEnd={onDragEnd}
+            className="cursor-grab"
+          >
+            {feeds.map((feed, idx) => {
+              let position = 0;
+              if (feeds.length % 2) {
+                position = idx - (feeds.length + 1) / 2;
+              } else {
+                position = idx - feeds.length / 2;
+              }
+              return (
+                <FeedCard
+                  key={feed.feedId}
+                  feed={feed}
+                  index={idx}
+                  handleMove={handleMove}
+                  position={position}
+                  cardSize={cardSize}
+                />
+              );
+            })}
+          </motion.div>
         </div>
       </FadeReveal>
       <FadeReveal>
@@ -126,7 +145,7 @@ const FeedCard = ({ position, feed, handleMove, cardSize }: FeedProps) => {
     <motion.div
       initial={false}
       //   onClick={() => handleMove(position)}
-      className="absolute left-1/2 top[17rem] cursor-pointer flex"
+      className="absolute left-1/2 top[17rem] cursor-grab flex"
       animate={{
         width: cardSize,
         height: cardSize,
@@ -144,7 +163,7 @@ const FeedCard = ({ position, feed, handleMove, cardSize }: FeedProps) => {
         src={feed.img}
         width={600}
         height={600}
-        className="rounded-[12px] lg:w-[450px] h-fit my-auto pointer-eventsauto"
+        className="rounded-[12px] lg:w-[450px] h-fit my-auto pointer-events-none"
         alt="feed"
       />
     </motion.div>

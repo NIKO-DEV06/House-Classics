@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
@@ -23,6 +23,7 @@ const BREAKPOINTS = {
 const EventsSlider = () => {
   const [ref, { width }] = useMeasure();
   const [offset, setOffset] = useState(0);
+  const dragX = useMotionValue(0);
 
   const CARD_BUFFER =
     width > BREAKPOINTS.lg ? 3 : width > BREAKPOINTS.sm ? 2 : 1;
@@ -44,6 +45,15 @@ const EventsSlider = () => {
       return;
     }
     setOffset((pv) => (pv -= CARD_SIZE));
+  };
+
+  const onDragEnd = () => {
+    const x = dragX.get();
+    if (x < 0) {
+      shiftRight();
+    } else {
+      shiftLeft();
+    }
   };
 
   return (
@@ -89,25 +99,40 @@ const EventsSlider = () => {
               <div className="bg-[#2B2B2B] w-[78%] h-[1px]"></div>
             </div>
           </FadeReveal>
-          <FadeReveal delay={0.3}>
+
+          <div className="relative overflow-hidden w-full cursor-grab">
             <motion.div
-              animate={{
-                x: offset,
+              drag="x"
+              dragConstraints={{
+                left: 0,
+                right: 0,
               }}
-              transition={{
-                ease: "easeInOut",
-                type: "spring",
-                mass: 3,
-                stiffness: 200,
-                damping: 50,
+              style={{
+                x: dragX,
               }}
-              className="flex relative"
+              onDragEnd={onDragEnd}
             >
-              {events.map((event) => {
-                return <EventCard key={event.id} {...event} />;
-              })}
+              <FadeReveal delay={0.3}>
+                <motion.div
+                  animate={{
+                    x: offset,
+                  }}
+                  transition={{
+                    ease: "easeInOut",
+                    type: "spring",
+                    mass: 3,
+                    stiffness: 200,
+                    damping: 50,
+                  }}
+                  className="flex relative"
+                >
+                  {events.map((event) => {
+                    return <EventCard key={event.id} {...event} />;
+                  })}
+                </motion.div>
+              </FadeReveal>
             </motion.div>
-          </FadeReveal>
+          </div>
         </div>
       </div>
     </section>
@@ -127,7 +152,7 @@ const EventCard = ({ imgUrl, date, name, ticketUrl }: EventType) => {
         src={imgUrl}
         width={400}
         height={400}
-        className="mb-3 w-full rounded-t-[10px] object-cover"
+        className="mb-3 w-full rounded-t-[10px] object-cover pointer-events-none"
         alt={name}
       />
 
