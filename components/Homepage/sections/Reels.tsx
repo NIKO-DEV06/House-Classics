@@ -55,9 +55,9 @@ const Reels = () => {
 
   const onDragEnd = () => {
     const x = dragX.get();
-    if (x < 0) {
+    if (x < -15) {
       shiftRight();
-    } else {
+    } else if (x > 15) {
       shiftLeft();
     }
   };
