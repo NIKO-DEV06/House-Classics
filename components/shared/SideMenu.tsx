@@ -19,7 +19,7 @@ import logo from "@/assets/logo.svg";
 
 const SideMenu = () => {
   const pathname = usePathname();
-  const [menuIsOpen, setMenuIsOpen] = useState(true);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
