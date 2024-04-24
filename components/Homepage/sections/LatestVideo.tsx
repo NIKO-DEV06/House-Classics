@@ -49,17 +49,16 @@ const LatestVideo = () => {
               </h2>
             </Reveal>
             <Reveal y={20}>
-              <p className="leading-[1.8rem] lg:leading-[1.5rem] xl:leading-[1.8rem] lg:text-[0.9rem] xl:text-base mb-[3rem]">
+              <p className="leading-[1.8rem] lg:leading-[1.5rem] xl:leading-[1.8rem] lg:text-[0.9rem] xl:text-base mb-[2.5rem]">
                 A wonderful serenity has taken possession of my entire soul,
                 like these sweet mornings of spring which I enjoy with my whole.
               </p>
             </Reveal>
             <FadeReveal delay={0.3}>
-              <Link
-                href={""}
-                className="font-medium border-white border-[1px] rounded-[10px] py-[1rem] px-[1.2rem] text-[1rem] bg-[#111111] hover:text-black hover:bg-white duration-300 ease-in-out"
-              >
-                Book Tickets
+              <Link href={""} className="flex w-fit">
+                <div className="white-btn-hover full w-fit border-white border-[1px] rounded-[10px] py-[0.9rem] px-[1.2rem] cursor-pointer">
+                  <p className="font-medium text-[1.05rem] ">Book Tickets</p>
+                </div>
               </Link>
             </FadeReveal>
           </div>
@@ -68,7 +67,7 @@ const LatestVideo = () => {
       <motion.h1
         ref={targetRef}
         style={{ x: moveOnXAxis }}
-        className="font-bold text-[#242212] text-[8rem] md:text-[12rem] lg:text-[15rem] xl:text-[23rem] text-right tracking-[-0.07em] leading-[0.4] pl-[0.5rem] whitespace-nowrap z-0 pointer-events-none"
+        className="font-bold text-[#242212] text-[8rem] md:text-[12rem] lg:text-[15rem] xl:text-[23rem] text-right tracking-[-0.07em] leading-[0.4] pl-[0.5rem] whitespace-nowrap z-0"
       >
         Dont&apos; Miss
       </motion.h1>

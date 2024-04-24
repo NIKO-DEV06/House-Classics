@@ -69,8 +69,14 @@ const Reels = () => {
         ref={ref}
         className="relative pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] flex flex-col lg:flex-row 2xl:max-w-[1600px] 2xl:m-auto gap-[1rem] z-[2]"
       >
-        <div className="absolute w-[10rem] lg:w-[22rem] h-[89%] right-0 top-[1rem] scale-y-105 z-[5] pointer-events-none">
-          <div className="w-full h-full bg-gradient-to-r from-transparent to-[#111111] blur-lg"></div>
+        <div className="absolute w-[10rem] lg:w-[22rem] h-[80%] lg:h-[100%] right-[1rem] top-[10.5rem] lg:top-[0rem] scale-y-[1] z-[5] pointer-events-none">
+          <div
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, transparent 0%, #111111 95%)",
+            }}
+            className="w-full h-full"
+          ></div>
         </div>
         <div className="">
           <Reveal y={30}>
@@ -119,7 +125,7 @@ const Reels = () => {
             }}
             onDragEnd={onDragEnd}
           >
-            <FadeReveal delay={0.3}>
+            <FadeReveal delay={0.3} extraStyle="shadow-2xl">
               <motion.div
                 animate={{
                   x: offset,
@@ -131,7 +137,7 @@ const Reels = () => {
                   stiffness: 200,
                   damping: 50,
                 }}
-                className="flex gap-[-20rem] space-x-[-3.5rem]"
+                className="flex gap-[1.5rem]"
               >
                 {reels.map((reel) => {
                   return <ReelCard key={reel.id} {...reel} />;
@@ -155,21 +161,21 @@ const Reels = () => {
 const ReelCard = ({ views, img }: ReelType) => {
   return (
     <div
-      className="relative shrink-0 rounded-[10px] h-full translate-x-[-2.5rem]"
+      className="relative shrink-0 rounded-[10px] h-full"
       style={{
-        width: 400,
+        width: 320,
         marginRight: MARGIN,
       }}
     >
       <Image
         src={img}
-        width={400}
-        height={400}
+        width={500}
+        height={500}
         className="w-full rounded-[10px] object-cover pointer-events-none"
         alt="reel"
       />
-      <div className="absolute left-[4rem] bottom-[4.5rem] bg-black/70 w-fit flex items-center font-semibold rounded-[13px] gap-[0.5rem] px-[0.95rem] py-[0.45rem]">
-        <TbTriangleInvertedFilled className="-rotate-90" />
+      <div className="absolute left-[1.5rem] bottom-[1rem] bg-black/70 w-fit flex items-center font-semibold rounded-[13px] gap-[0.5rem] px-[0.9rem] py-[0.45rem]">
+        <TbTriangleInvertedFilled size={18} className="-rotate-90" />
         {views}
       </div>
     </div>

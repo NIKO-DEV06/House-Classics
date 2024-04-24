@@ -1,8 +1,8 @@
 "use client";
 
-import EventsSlider from "@/components/Homepage/sections/EventsSlider";
-import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import EventsSlider from "@/components/Homepage/sections/EventsSlider";
 
 const Events = () => {
   const targetRef = useRef(null);
@@ -20,7 +20,13 @@ const Events = () => {
           <EventsSlider />
 
           <div className="absolute w-[10rem] lg:w-[22rem] h-[82%] right-0 scale-y-[1.1] top-[8rem] pointer-events-none blur-lg">
-            <div className="w-full h-full bg-gradient-to-r from-transparent to-[#111111]"></div>
+            <div
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, transparent 0%, #111111 95%)",
+              }}
+              className="w-full h-full"
+            ></div>
           </div>
         </div>
         <motion.h1

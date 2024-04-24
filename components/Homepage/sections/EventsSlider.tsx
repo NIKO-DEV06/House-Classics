@@ -64,12 +64,11 @@ const EventsSlider = () => {
       <div className="relative overflow-hidden">
         <div className="">
           <div className="flex items-center justify-between lg:pr-[6rem] 2xl:pr-0">
-            <Reveal y={50}>
+            <Reveal y={50} extraStyle="pr-[0.5rem]">
               <h2 className="mb-4 text-[2.5rem] md:text-[3.3rem] font-bold tracking-tighter">
                 Events
               </h2>
             </Reveal>
-
             <FadeReveal>
               <div className="flex items-center gap-2">
                 <button
@@ -148,24 +147,25 @@ const EventCard = ({ imgUrl, date, name, ticketUrl }: EventType) => {
         marginRight: MARGIN,
       }}
     >
-      <Image
-        src={imgUrl}
-        width={400}
-        height={400}
-        className="mb-3 w-full rounded-t-[10px] object-cover pointer-events-none"
-        alt={name}
-      />
+      <div className="overflow-hidden rounded-t-[10px] mb-3">
+        <Image
+          src={imgUrl}
+          width={400}
+          height={400}
+          className="w-full rounded-t-[10px] object-cover active:pointer-events-none hover:scale-[1.08] ease-in-out duration-500"
+          alt={name}
+        />
+      </div>
 
       <div className="px-[2rem] pt-[1rem] pb-[3rem]">
         <p className="font-semibold text-[#FFE81F] text-[0.9rem]">{date}</p>
         <p className="font-medium text-[1.125rem] mt-[0.2rem] mb-[2rem]">
           {name}
         </p>
-        <Link
-          href={ticketUrl}
-          className="font-medium border-white border-[1px] rounded-[10px] py-[1rem] px-[1.2rem] text-[1.125rem] hover:text-black hover:bg-white duration-300 ease-in-out"
-        >
-          Get Tickets
+        <Link href={ticketUrl} className="flex w-fit">
+          <div className="white-btn-hover w-fit border-white border-[1px] rounded-[10px] py-[1rem] px-[1.2rem] cursor-pointer">
+            <p className="font-medium text-[1.125rem] ">Get Tickets</p>
+          </div>
         </Link>
       </div>
     </div>

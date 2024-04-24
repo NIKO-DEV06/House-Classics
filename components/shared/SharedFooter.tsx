@@ -64,7 +64,7 @@ const SharedFooter = () => {
               </div>
             </FadeReveal>
             <FadeReveal delay={0.15}>
-              <div className="bg-gradient-to-b from-[#1A1A1A] to-[#0C0C0C] flex flex-col gap-[0.5rem] rounded-[10px] py-[1.5rem] pl-[2rem] w-[25rem] md:w-[17rem] xl:w-[20rem]">
+              <div className="bg-gradient-to-b from-[#1A1A1A] to-[#0C0C0C] flex flex-col gap-[0.5rem] rounded-[10px] py-[1.5rem] pl-[2rem] w-[25rem] md:w-[17rem] xl:w-[20rem] cursor-pointer">
                 <p className="uppercase text-[0.8rem] text-[#FFE81F] tracking-[0.2em]">
                   GET IN TOUCH
                 </p>

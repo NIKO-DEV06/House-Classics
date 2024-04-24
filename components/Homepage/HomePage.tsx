@@ -1,3 +1,4 @@
+import { FadeReveal } from "../animations/FadeReveal";
 import About from "./sections/About";
 import Events from "./sections/Events";
 import Feed from "./sections/Feed";
@@ -9,8 +10,12 @@ import Reels from "./sections/Reels";
 const HomePage = () => {
   return (
     <section className="overflow-clip">
-      <Hero />
-      <About />
+      <FadeReveal>
+        <Hero />
+      </FadeReveal>
+      <FadeReveal>
+        <About />
+      </FadeReveal>
       <Events />
       <Gallery />
       <Reels />

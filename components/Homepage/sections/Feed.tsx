@@ -129,7 +129,7 @@ const Feed = () => {
       </FadeReveal>
       <FadeReveal>
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pb-[6rem]">
-          <button className="border-black border-[1px] py-[1rem] px-[1rem] rounded-[10px] text-[1.2rem] bg-[#EDEDED] hover:bg-[#111111] hover:text-[#EDEDED] duration-[300ms] ease-in-out">
+          <button className="border-white border-[1.5px] py-[1rem] px-[1rem] rounded-[10px] text-[1.2rem] bg[#EDEDED] hover:bg[#111111] hover:text[#EDEDED] duration-[300ms] ease-in-out white-btn-hover invert text-white">
             @houseandclassics
           </button>
         </div>

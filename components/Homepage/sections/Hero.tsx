@@ -25,7 +25,7 @@ const Hero = () => {
                 extraStyle="translate-x-[-2rem] md:translate-x-[-3.5rem] lg:translate-x-[-5rem]"
                 overflow=""
               >
-                <h1 className="text-[2.8rem] md:text-[5.5rem] lg:text-[6rem]  xl:text-[8rem] font-extrabold tracking-tighter ">
+                <h1 className="text-[2.8rem] md:text-[5.5rem] lg:text-[6rem]  xl:text-[8rem] font-extrabold tracking-tighter">
                   The Ultimate
                 </h1>
               </Reveal>
@@ -56,7 +56,7 @@ const Hero = () => {
         {/* HERO BUTTONS */}
         <div className="flex justify-center flex-wrap gap-[0.5rem] xl:mt-[2rem] translate-y-[-3rem] md:translate-y-0">
           <FadeReveal delay={0.6} extraStyle="w-full md:w-fit">
-            <div className="bg-[#383838]/35 flex justify-between md:justify-start items-center md:items-start gap-[3rem] px-[2.5rem] py-[2.5rem] rounded-[10px]">
+            <div className="bg-[#383838]/35 flex justify-between md:justify-start items-center gap-[3rem] px-[2.5rem] py-[2.5rem] rounded-[10px]">
               <div>
                 <p className="text-[#FFE81F] text-[0.9rem]">
                   House an Classics Malta
@@ -73,8 +73,8 @@ const Hero = () => {
               </Link>
             </div>
           </FadeReveal>
-          <FadeReveal delay={0.8} extraStyle="">
-            <div className="bg-[#383838]/35 w-full md:w-fit flex gap-[3rem] px-[2.5rem] py-[2.5rem] rounded-[10px] justify-between md:justify-start items-center md:items-start">
+          <FadeReveal delay={0.8} extraStyle="w-full md:w-auto">
+            <div className="bg-[#383838]/35 w-full md:w-fit flex gap-[3rem] px-[2.5rem] py-[2.5rem] rounded-[10px] justify-between md:justify-start items-center">
               <div>
                 <p className="text-[#FFE81F] text-[0.9rem]">
                   House an Classics
@@ -92,11 +92,11 @@ const Hero = () => {
             </div>
           </FadeReveal>
 
-          <FadeReveal delay={0.3}>
+          <FadeReveal delay={0.3} extraStyle="w-full md:w-auto">
             <FadeReveal extraStyle="yellow-btn-hover bg-[#FFE81F]/35 px-[2.5rem] py-[2.78rem] rounded-[10px] cursor-pointer hover:text-black">
               <Link
                 href={""}
-                className="bg-[#FFE81F]/35 duration-300 ease-in-out uppercase w-fit"
+                className="bg[#FFE81F]/35 duration-300 ease-in-out uppercase md:w-fit lg:w-full flex flex-col items-center md:items-start"
               >
                 <span className="flex">
                   Our <GoArrowRight size={23} />
