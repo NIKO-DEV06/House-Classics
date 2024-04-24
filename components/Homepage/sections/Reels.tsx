@@ -69,13 +69,13 @@ const Reels = () => {
         ref={ref}
         className="relative pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] flex flex-col lg:flex-row 2xl:max-w-[1600px] 2xl:m-auto gap-[1rem] z-[2]"
       >
-        <div className="absolute w-[10rem] lg:w-[22rem] h-[73%] lg:h-[100%] right-[1rem] top-[11.8rem] lg:top-[0rem] z-[5] pointer-events-none">
+        <div className="absolute w-[10rem] lg:w-[22rem] h-[73%] lg:h-[100%] right-[0rem] top-[11.8rem] lg:top-[0rem] z-[5] pointer-events-none">
           <div
             style={{
               backgroundImage:
                 "linear-gradient(to right, transparent 0%, #111111 95%)",
             }}
-            className="w-full h-full"
+            className="w-full h-full scale-y-[1.1] blur-lg"
           ></div>
         </div>
         <div className="">
