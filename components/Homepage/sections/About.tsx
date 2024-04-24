@@ -38,6 +38,7 @@ const About = () => {
         muted
         loop
         controls={false}
+        playsInline
         className="h-[950px] md:h-[930px] 2xl:h-[850px] object-cover grayscale mt-[6rem] lg:mt-[10rem] opacity-[0.65] w-full pointer-events-none"
       />
       <section className="pl-[1.3rem] pr-[1.3rem] md:pl-[4rem] md:pr-[4rem] lg:pl-[6rem] lg:pr-[10rem] 2xl:pr-[9rem] pt-[3rem] pb-[8rem] lg:py-[2rem] lg:pb-[6rem] bg-no-repeat bg-cover absolute top-0 2xl:left-1/2 2xl:-translate-x-1/2">

@@ -8,6 +8,7 @@ import { FadeReveal } from "@/components/animations/FadeReveal";
 import dynamic from "next/dynamic";
 
 const SharedFooter = () => {
+  const currentYear = new Date().getFullYear();
   const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
     ssr: false,
   });
@@ -87,7 +88,7 @@ const SharedFooter = () => {
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start text-[0.9rem] text-[#6F6F6F]">
           <div className="flex flex-col lg:flex-row lg:gap-[5rem] font-light">
             <Reveal y={10} delay={0.2}>
-              <p>House and Classics 2023 &copy; All Rights Reserved</p>
+              <p>House and Classics {currentYear} &copy; All Rights Reserved</p>
             </Reveal>
             <Reveal y={10} delay={0.4} extraStyle="mx-auto lg:mx-0">
               <p className="hover:text-white duration-300 ease-in-out text-center lg:text-start">
