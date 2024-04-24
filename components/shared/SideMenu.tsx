@@ -183,7 +183,11 @@ const SideMenu = () => {
       {/* OVERLAY MENU ANIMATION */}
 
       {/* HAMBURGER FOR MOBILE */}
-      <div className="fixed lg:hidden right-[1.5rem] top-[1.5rem] z-50 mix-blend-difference">
+      <div
+        className={`fixed lg:hidden right-[1.5rem] top-[1.5rem] z-50 ${
+          menuIsOpen ? "text-black" : "text-white"
+        }`}
+      >
         <FadeReveal>
           <button onClick={toggleMenu}>
             <Hamburger toggled={menuIsOpen} size={22} />

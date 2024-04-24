@@ -44,28 +44,36 @@ const SharedFooter = () => {
                   We&apos;re Social:
                 </p>
                 <div className="flex gap-[0.6rem]">
-                  <FaFacebook
-                    size={23}
-                    className="hover:fill-[#FFE81F] duration-300 ease-in-out cursor-pointer"
-                  />
-                  <FaInstagram
-                    size={23}
-                    className="hover:fill-[#FFE81F] duration-300 ease-in-out cursor-pointer"
-                  />
-                  <FaTiktok
-                    size={23}
-                    className="hover:fill-[#FFE81F] duration-300 ease-in-out cursor-pointer"
-                  />
-                  <FaYoutube
-                    size={25}
-                    className="hover:fill-[#FFE81F] duration-300 ease-in-out cursor-pointer"
-                  />
+                  <Link href={""}>
+                    <FaFacebook
+                      size={23}
+                      className="hover:fill-[#FFE81F] duration-300 ease-in-out cursor-pointer"
+                    />
+                  </Link>
+                  <Link href={""}>
+                    <FaInstagram
+                      size={23}
+                      className="hover:fill-[#FFE81F] duration-300 ease-in-out cursor-pointer"
+                    />
+                  </Link>
+                  <Link href={""}>
+                    <FaTiktok
+                      size={23}
+                      className="hover:fill-[#FFE81F] duration-300 ease-in-out cursor-pointer"
+                    />
+                  </Link>
+                  <Link href={""}>
+                    <FaYoutube
+                      size={25}
+                      className="hover:fill-[#FFE81F] duration-300 ease-in-out cursor-pointer"
+                    />
+                  </Link>
                 </div>
               </div>
             </FadeReveal>
             <FadeReveal delay={0.15}>
-              <div className="bg-gradient-to-b from-[#1A1A1A] to-[#0C0C0C] flex flex-col gap-[0.5rem] rounded-[10px] py-[1.5rem] pl-[2rem] w-[25rem] md:w-[17rem] xl:w-[20rem] cursor-pointer">
-                <p className="uppercase text-[0.8rem] text-[#FFE81F] tracking-[0.2em]">
+              <div className="bg-gradient-to-b from-[#1A1A1A] to-[#0C0C0C] flex flex-col gap-[0.5rem] rounded-[10px] py-[1.5rem] pl-[2rem] w-[25rem] md:w-[17rem] xl:w-[20rem] cursor-pointer yellow-btn-hover group">
+                <p className="uppercase text-[0.8rem] text-[#FFE81F] tracking-[0.2em] group-hover:text-black duration-[400ms]">
                   GET IN TOUCH
                 </p>
                 <p className="font-bold tracking-tighter text-[1.15rem] lg:text-[1.3rem]">

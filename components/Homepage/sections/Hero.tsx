@@ -93,15 +93,17 @@ const Hero = () => {
           </FadeReveal>
 
           <FadeReveal delay={0.3} extraStyle="w-full md:w-auto">
-            <FadeReveal extraStyle="yellow-btn-hover bg-[#FFE81F]/35 px-[2.5rem] py-[2.78rem] rounded-[10px] cursor-pointer hover:text-black">
+            <FadeReveal extraStyle="yellow-btn-hover bg-[#FFE81F]/35 px-[2.5rem] py-[2.78rem] rounded-[10px] group cursor-pointer hover:text-black">
               <Link
                 href={""}
                 className="bg[#FFE81F]/35 duration-300 ease-in-out uppercase md:w-fit lg:w-full flex flex-col items-center md:items-start"
               >
-                <span className="flex">
+                <span className="flex text-white group-hover:text-black duration-[400ms]">
                   Our <GoArrowRight size={23} />
                 </span>
-                <p className="font-bold">Events</p>
+                <p className="font-bold text-white group-hover:text-black duration-[400ms]">
+                  Events
+                </p>
               </Link>
             </FadeReveal>
           </FadeReveal>
